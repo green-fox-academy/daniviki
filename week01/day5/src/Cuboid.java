@@ -4,8 +4,8 @@ public class Cuboid {
         double aSide = 10;
         double bSide = 10;
         double cSide = 10;
-        
-        System.out.println("Surface Area: " + 2 * ((int)(Math.pow(aSide,2)) + (int)(Math.pow(bSide,2)) + (int)(Math.pow(cSide,2))));
+
+        System.out.println("Surface Area: " + (2 * (Math.pow(aSide,2)) + Math.pow(bSide,2)) +  Math.pow(cSide,2));
         System.out.println("Volume: " + (int) (aSide * bSide * cSide));
     }
 
