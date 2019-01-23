@@ -9,15 +9,21 @@ public class PurpleSteps3d {
         // Reproduce this:
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
-        int xy = 0;
+        int x = 0;
+        int y = 0;
         int size = 10;
-        graphics.setColor(new Color(164, 66, 244));
         for( int i = 0; i < 6; i++ ) {
-            size +=10;
-           graphics.fillRect(xy + (i * size - size),xy +(i * size - size),size ,size);
-           //graphics.fillRect(xy + (i + bigger), xy + (i + bigger), size ,size);
+            draw(x + size * i, y + size * i, size * (1 + i), graphics);
+            x = x + size * i;
+            y = y + size * i;
+            //graphics.fillRect(xy + (i + bigger), xy + (i + bigger), size ,size);
 
         }
+
+    }
+    public static void draw (int x, int y, int size, Graphics graphics) {
+        graphics.setColor(new Color(164, 66, 244));
+        graphics.fillRect(x,y, size,size);
 
 
     }
