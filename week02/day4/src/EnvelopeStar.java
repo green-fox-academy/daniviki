@@ -6,16 +6,32 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class EnvelopeStar {
+
     public static void mainDraw(Graphics graphics) {
         graphics.setColor(new Color(17, 198, 82));
 
-        int x=160;
+        int x = 160;
         int y = 150;
         int x2 = 10;
         int y2 = 160;
+        drawLine(x,y,x2,y2,graphics);
+    }
 
-
+    public static void drawLine (int x, int y, int x2, int y2, Graphics graphics) {
         for( int i = 0; i < 15; i++ ) {
+            graphics.drawLine(x,y - (i * 10),x2 + (i * 10),y2);
+            graphics.drawLine(x,y - 10 + (i * 10),x2 + (i * 10),y2);
+            graphics.drawLine(x,y * 2 - i * 10,x2 + 150 + i *10,y2);
+            graphics.drawLine(x,y - i * 10, x2 + 300 - i * 10 ,y2);
+        }
+
+    }
+
+
+
+
+
+        /*for( int i = 0; i < 15; i++ ) {
             graphics.drawLine(x,y - (i*10),x2 + (i *10),y2);
 
 
@@ -54,9 +70,9 @@ public class EnvelopeStar {
         for( int i = 0; i < 15; i++ ) {
             graphics.drawLine(x,y + (i*10),x2 + (i *10),y2);
 
-        }
+        }*/
 
-    }
+
 
 
     // Don't touch the code below

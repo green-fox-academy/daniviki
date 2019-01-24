@@ -37,13 +37,6 @@ public class LinePlay {
 
     }
 
-    public static void drawOneLine(int x1, int y1, Graphics graphics) {
-        int c = 160;
-        graphics.drawLine(x1, y1, c, c);
-
-
-
-    }
 
     // Don't touch the code below
     static int WIDTH = 320;
