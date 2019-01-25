@@ -6,123 +6,39 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class LinePlayQuarters {
-    public static void mainDraw(Graphics graphics) {
-        //1A
-        graphics.setColor(new Color(161, 66, 244));
-        // graphics.drawLine(40,0,320,20);
-        int x = 20;
-        int y =0;
-        int x2 = 160;
-        int y2 = 10;
-        int step = 10;
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            x += step;
-            y2 += step;
+    public static void mainDraw(Graphics g) {
+        int lines = 14;
+        int divide = 1;
+        int width = WIDTH / divide;
+        int height = HEIGHT / divide;
+        int offsetX = 0;
+        for( int i = 0; i < divide ; i++ ) {
 
+            drawLine(divide,g, lines, width, height, offsetX);
+            offsetX += width;
         }
-        //1B
-        graphics.setColor(Color.GREEN);
-        //graphics.drawLine(0,40,20,320);
-        x = 0;
-        y = 20;
-        x2 = 10;
-        y2 = 160;
+    }
+    public static void drawLine (int divide, Graphics g, int lines, int width, int height, int offsetX) {
+        int startingPointX = (40 / divide) + offsetX;
+        int startingPointY = 40 / divide;
+        int endingPiontX = 0 + offsetX;
+        int difference = height / lines -1;
+        int endingPointY = difference;
 
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            y += step;
-            x2 += step;
 
-        }
-        //2A
-        graphics.setColor(new Color(161, 66, 244));
-        // graphics.drawLine(40,0,320,20);
-         x = 180;
-         y =0;
-         x2 = 320;
-         y2 = 10;
-
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            x += step;
-            y2 += step;
-
-        }
-        //2B
-        graphics.setColor(Color.GREEN);
-        //graphics.drawLine(0,40,20,320);
-        x = 160;
-        y = 20;
-        x2 = 170;
-        y2 = 160;
-
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            y += step;
-            x2 += step;
-
-        }
-        //3A
-        graphics.setColor(new Color(161, 66, 244));
-        // graphics.drawLine(40,0,320,20);
-        x = 20;
-        y =160;
-        x2 = 160;
-        y2 = 170;
-
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            x += step;
-            y2 += step;
-
-        }
-        //3B
-        graphics.setColor(Color.GREEN);
-        //graphics.drawLine(0,40,20,320);
-        x = 0;
-        y = 180;
-        x2 = 10;
-        y2 = 320;
-
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            y += step;
-            x2 += step;
-
-        }
-
-        //4A
-        graphics.setColor(new Color(161, 66, 244));
-        // graphics.drawLine(40,0,320,20);
-        x = 180;
-        y =160;
-        x2 = 320;
-        y2 = 170;
-
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            x += step;
-            y2 += step;
-
-        }
-        //4B
-        graphics.setColor(Color.GREEN);
-        //graphics.drawLine(0,40,20,320);
-        x = 160;
-        y = 170;
-        x2 = 170;
-        y2 = 320;
-
-        for( int i = 0; i < 14; i++ ) {
-            graphics.drawLine(x,y,x2,y2);
-            y += step;
-            x2 += step;
+        for( int i = 0; i < lines ; i++ ) {
+            g.setColor(new Color(161, 66, 244));
+            g.drawLine(startingPointX , 0,width + offsetX,endingPointY);
+            startingPointX += difference;
+            endingPointY += difference;
+            g.setColor(Color.GREEN);
+            g.drawLine(0 + offsetX, startingPointY, endingPiontX, height);
+            startingPointY += difference;
+            endingPiontX += difference;
 
         }
 
     }
-
 
     // Don't touch the code below
     static int WIDTH = 320;

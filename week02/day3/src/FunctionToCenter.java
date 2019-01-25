@@ -15,6 +15,7 @@ public class FunctionToCenter {
 
         int x1 = 0;
         int y1 = 0;
+
         graphics.drawRect(0,0,320,320);
 
         for( int i = 0; i < 17; i++) {

@@ -18,6 +18,18 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangles {
     public static void mainDraw(Graphics graphics) {
 
+        int x = 160;
+        int y = 0;
+        int x2 = 160;
+        int y2 = 10;
+
+        graphics.drawLine(x,y,x2-5,y2);
+        graphics.drawLine(x,y,x2 + 5, y2);
+        graphics.drawLine(x2-5, 10, x2 + 5, y2);
+
+        //graphics.drawLine();
+
+
         /*int xy = 0;
         int size = WIDTH / 8;*/
 
@@ -33,7 +45,7 @@ public class Triangles {
 
             }
         }*/
-        int x = 160;
+        /*int x = 160;
         int y = 20;
         int x2 = 180;
 
@@ -50,7 +62,7 @@ public class Triangles {
             }
             //for( int k = 0; k <= i; k++ ) {
 
-        }
+        }*/
 
     }
 

@@ -20,7 +20,7 @@ public class EnvelopeStar {
     public static void drawLine (int x, int y, int x2, int y2, Graphics graphics) {
         for( int i = 0; i < 15; i++ ) {
             graphics.drawLine(x,y - (i * 10),x2 + (i * 10),y2);
-            graphics.drawLine(x,y - 10 + (i * 10),x2 + (i * 10),y2);
+            graphics.drawLine(x,y + (i * 10),x2 + (i * 10),y2);
             graphics.drawLine(x,y * 2 - i * 10,x2 + 150 + i *10,y2);
             graphics.drawLine(x,y - i * 10, x2 + 300 - i * 10 ,y2);
         }
