@@ -17,18 +17,17 @@ public class DrawChessTable {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Add the number of the lines of the pyramid: ");
         int chess = scanner.nextInt();
-        String thing = "%";
-        String space = " %";
 
-        for (int i = chess; i < chess + 1; i--) {
 
-            for (int j = 1; j <= chess; j++) {
-                System.out.print(space);
+        for (int i = 0; i < chess + 1; i++) {
+
+            for (int j = 1; i == chess; j++) {
+                System.out.print(" %");
             }
             System.out.println();
 
             for (int k = 1; k <= chess; k++) {
-                System.out.print(thing);
+                System.out.print( "%");
             }
             System.out.println();
         }

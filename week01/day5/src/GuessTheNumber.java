@@ -11,16 +11,22 @@ public class GuessTheNumber {
         Scanner scanner = new Scanner(System.in);
 
         int number = 9;
-        System.out.println("Guess the number: ");
+        System.out.println("Guess the number between 1 and 10: ");
         int guess = scanner.nextInt();
 
-        if (guess == number) {
-            System.out.println("You found the number: " + number);
-        }else if (guess > number) {
-            System.out.println("The stored number is lover");
-        }else if (guess < number) {
-            System.out.println("The stored number is higher");
+        while (guess != number) {
+
+            if (guess > number) {
+                System.out.println("The stored number is lover");
+
+            }else {
+                System.out.println("The stored number is higher");
+            }
+            System.out.println("Guess the number: ");
+            guess = scanner.nextInt();
+
         }
+        System.out.println("Yaay.");
 
 
     }
