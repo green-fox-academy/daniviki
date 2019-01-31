@@ -3,7 +3,7 @@ public class AppendAFunc {
 
       String typo = "Chinchill";
       typo = appendAFunc(typo);
-        System.out.println(typo);
+      System.out.println(typo);
     }
     public static String appendAFunc(String input){
 

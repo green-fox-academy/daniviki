@@ -8,7 +8,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class LinePlayQuarters {
     public static void mainDraw(Graphics g) {
         int lines = 14;
-        int divide = 1;
+        int divide = 4;
         int width = WIDTH / divide;
         int height = HEIGHT / divide;
         int offsetX = 0;

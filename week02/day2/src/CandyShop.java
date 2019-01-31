@@ -22,7 +22,7 @@ public class CandyShop {
         for( int i = 0; i < newList.size(); i++ ) {
             if (newList.get(i).equals(2)) {
                 newList.set(i, "Croissant");
-            }else if (newList.get(i).equals(false);
+            }//else if (newList.get(i).equals(false);
                 newList.set(i,"Ice Cream");
 
         }
