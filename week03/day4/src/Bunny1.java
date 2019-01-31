@@ -6,11 +6,11 @@ public class Bunny1 {
     }
     static int bunnyEars (int n) {
 
-        if (n <0) {
+        if (n <= 0) {
             return 0;
         }else{
 
-            return n*2;
+            return bunnyEars( n - 1 ) + 2;
 
         }
 
