@@ -3,6 +3,9 @@ public class Strings {
         // Given a string, compute recursively (no loops) a new string where all the
         // lowercase 'x' chars have been changed to 'y' chars.
 
+        //MEGÉRTÉS ALATT..
+
+
         String words = "Kevés az iksz ebben a mondatban..xxxxxxxx";
         char from = 'x';
         char to = 'y';
