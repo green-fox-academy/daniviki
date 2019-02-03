@@ -8,8 +8,15 @@ public class Reverse {
 
         System.out.println(reverse(reversed));
     }
-    public static String reverse(String rev) {
-        String reverse = new StringBuffer(rev).reverse().toString();
-        return rev;
+    public static String reverse (String stringToReverse) {
+
+        String temp = "";
+
+        for( int i = stringToReverse.length() -1; i > 0; i-- ) {
+            temp = temp + stringToReverse.charAt(i);
+        }
+        stringToReverse = temp;
+        return stringToReverse;
     }
+
 }
