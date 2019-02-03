@@ -8,7 +8,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Carpet {
     public static void mainDraw(Graphics g) {
         int sizeOfBox = WIDTH;
-        g.setColor(Color.BLACK); 
+        g.setColor(Color.BLACK);
         recursion(0,0,sizeOfBox,g);
         //drawRects(0,0,sizeOfBox,g);
 
@@ -21,6 +21,7 @@ public class Carpet {
         int thirdOfWidth = sizeOfBox/3;
         drawRects(xStart,yStart,sizeOfBox,g);
         if (sizeOfBox > 20) {
+
             recursion(xStart, yStart, thirdOfWidth, g);
             recursion(xStart + 2 * thirdOfWidth, yStart, thirdOfWidth, g);
             recursion(xStart, yStart+ 2 * thirdOfWidth, thirdOfWidth, g);

@@ -27,7 +27,7 @@ public class Box {
     static void recursion (int xStart, int yStart, int sizeOfBox, Graphics g) {
         int thirdOfWidth = sizeOfBox/3;
         drawRects(xStart,yStart,sizeOfBox,g);
-        if (sizeOfBox > 20) {  
+        if (sizeOfBox > 20) {
             recursion(xStart + thirdOfWidth, yStart, thirdOfWidth, g);
             recursion(xStart, yStart + thirdOfWidth, thirdOfWidth, g);
             recursion(xStart + 2 * thirdOfWidth, yStart + thirdOfWidth, thirdOfWidth, g);
