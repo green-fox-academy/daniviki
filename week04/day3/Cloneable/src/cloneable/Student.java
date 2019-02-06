@@ -34,7 +34,7 @@ public class Student extends Person implements Cloneable{
 
 
     @Override
-    public Cloneable clone(Cloneable cloneable) {
-        return cloneable;
+    public Object clone() {
+        return new Student(name,age,gender,previousOrganization);
     }
 }
