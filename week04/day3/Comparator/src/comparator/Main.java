@@ -20,5 +20,22 @@ public class Main {
         for( Domino domino: dominoes) {
             System.out.println(domino);
         }
+
+        List<Thing> things = new ArrayList<>();
+
+        things.add(new Thing("shopping",false));
+        things.add(new Thing("walking", false));
+        things.add(new Thing("sleeping", false));
+        things.add(new Thing("playing", false));
+        things.add(new Thing("studying", true));
+        things.add(new Thing("eating", true));
+        things.add(new Thing("working", true));
+
+        Collections.sort(things);
+
+        for( Thing thing: things) {
+            System.out.println(thing);
+        }
+
     }
 }
