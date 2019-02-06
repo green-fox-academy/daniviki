@@ -1,6 +1,6 @@
 package gardenapp;
 
-public class Plant {
+public abstract class Plant {
     String color;
     double amountOfWater;
 
@@ -9,15 +9,11 @@ public class Plant {
         this.amountOfWater = 0;
     }
 
-    public void status() {
+    public abstract void status();
 
-    }
+    public abstract void watering(double wateringWith);
 
-    public void watering(double wateringWith) {
-
-    }
-
-    public boolean needsWater () {
+    public  boolean needsWater () {
       return true;
     }
 
