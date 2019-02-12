@@ -15,6 +15,7 @@ public class Garden {
         Plant orange = new Tree("orange");
         plants.add(orange);
 
+
         int thirstyPlants = countThirstyPlants(plants);
 
         for( Plant plant : plants) {
