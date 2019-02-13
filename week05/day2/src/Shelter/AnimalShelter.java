@@ -39,13 +39,12 @@ public class AnimalShelter {
         for( Animal animal : animals ) {
             if (animal.isAdoptable() == true) {
                 healthyAnimals.add(animal);
-                int randomAnimal = (int) Math.random() * healthyAnimals.size();
-                animals.remove(animal.g);
-                int randomAdopter = (int) Math.random() * adopters.size();
-                adopters.remove(randomAdopter);
             }
         }
-
+        int randomAnimal = (int) Math.random() * healthyAnimals.size();
+        animals.remove(randomAnimal);
+        int randomAdopter = (int) Math.random() * adopters.size();
+        adopters.remove(randomAdopter);
     }
 
     public int earnDonation(int donation) {
