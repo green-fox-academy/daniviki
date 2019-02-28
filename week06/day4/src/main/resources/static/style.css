@@ -1,0 +1,27 @@
+html {
+    font-family: Calibri;
+}
+p {
+    font-size: 2.5rem;
+    color: #01bcd4;
+    border-bottom: 0.125rem;
+    border-bottom-style: solid;
+    font-weight: bold;
+}
+form {
+    display: inline;
+}
+input {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem;
+    margin-right: 1.875rem;
+    height: 1.875rem;
+}
+thead {
+    font-size: 1.5rem;
+    background-color: #62efff;
+    font-weight: bold;
+
+}
