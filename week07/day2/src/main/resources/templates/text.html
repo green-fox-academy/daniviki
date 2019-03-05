@@ -6,7 +6,12 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <h1 th:text="${account.getName()} + ' - ' + ${account.getFormattedBalance()}
-    + ' ' + ${account.getCurrency()} + ' - ' +${account.getAnimalType()}"></h1>
+<div>
+    <span th:text="|This is an ${html} text|"></span>
+    <span th:text="${enjoy}"></span>
+    <br>
+    <span th:utext="|This is an ${html} text|"></span>
+    <span th:utext="${enjoy}"></span>
+</div>
 </body>
 </html>
