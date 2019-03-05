@@ -9,6 +9,7 @@
 <table>
     <thead>
     <tr>
+        <td>index</td>
         <td>Name</td>
         <td>Balance</td>
         <td>Currency</td>
@@ -17,6 +18,7 @@
     </thead>
     <tbody>
     <tr th:each="account : ${accounts}">
+        <td th:text="${accountStat.index}"></td>
         <td th:text="${account.getName()}"></td>
         <td th:text="${account.getFormattedBalance()}"></td>
         <td th:text="${account.getCurrency()}"></td>
