@@ -14,11 +14,11 @@ public class BankController {
     List<BankAccount> bankAccounts = new ArrayList<>();
 
     public BankController() {
-        bankAccounts.add(new BankAccount("Simba", 2000, "Zebra" ,"lion"));
-        bankAccounts.add(new BankAccount("Pumbaa", 1400, "Bug", "warthog"));
-        bankAccounts.add(new BankAccount("Timon", 1320, "Bug", "meerkat"));
-        bankAccounts.add(new BankAccount("Mufasa", 1000, "Antelope", "lion"));
-        bankAccounts.add(new BankAccount("Rafiki", 2500, "Fruit", "mandrill"));
+        bankAccounts.add(new BankAccount("Simba", 2000, "Zebra" ,"lion", true));
+        bankAccounts.add(new BankAccount("Pumbaa", 1400, "Bug", "warthog", false));
+        bankAccounts.add(new BankAccount("Timon", 1320, "Bug", "meerkat", false));
+        bankAccounts.add(new BankAccount("Mufasa", 1000, "Antelope", "lion", false));
+        bankAccounts.add(new BankAccount("Rafiki", 2500, "Fruit", "mandrill", false));
     }
 
     @RequestMapping(value = "/show")

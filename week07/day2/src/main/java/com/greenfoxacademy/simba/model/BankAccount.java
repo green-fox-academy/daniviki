@@ -8,20 +8,18 @@ public class BankAccount {
     double balance;
     String currency;
     String animalType;
+    boolean isKing;
 
-    public BankAccount(String name,double balance,String currency,String  animalType) {
+    public BankAccount(String name,double balance,String currency,String  animalType, boolean isKing) {
         this.name = name;
         this.balance = balance;
         this.currency = currency;
         this.animalType = animalType;
+        this.isKing = isKing;
     }
 
     public String getName() {
         return name;
-    }
-
-    public double getBalance() {
-        return balance;
     }
 
     public String getFormattedBalance(){
@@ -32,10 +30,11 @@ public class BankAccount {
         return currency;
     }
 
-
-
     public String getAnimalType() {
         return animalType;
     }
 
+    public boolean getIsKing() {
+        return isKing;
+    }
 }

@@ -4,11 +4,13 @@
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="static/style.css">
 </head>
 <body>
 <table>
     <thead>
     <tr>
+        <td>Status</td>
         <td>index</td>
         <td>Name</td>
         <td>Balance</td>
@@ -18,6 +20,7 @@
     </thead>
     <tbody>
     <tr th:each="account : ${accounts}">
+        <td th:utext="${account.getIsKing()} ? '<b>King</b>' : 'Not king'"></td>
         <td th:text="${accountStat.index}"></td>
         <td th:text="${account.getName()}"></td>
         <td th:text="${account.getFormattedBalance()}"></td>
