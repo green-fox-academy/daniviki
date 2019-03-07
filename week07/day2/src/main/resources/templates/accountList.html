@@ -10,8 +10,9 @@
 <table>
     <thead>
     <tr>
-        <td>Status</td>
         <td>index</td>
+        <td>Power</td>
+        <td>Status</td>
         <td>Name</td>
         <td>Balance</td>
         <td>Currency</td>
@@ -20,6 +21,7 @@
     </thead>
     <tbody>
     <tr th:each="account : ${accounts}">
+        <td th:text="${accountStat.index}"></td>
         <td th:utext="${account.getIsKing()} ? '<b>King</b>' : 'Not king'"></td>
         <td th:text="${accountStat.index}"></td>
         <td th:text="${account.getName()}"></td>
