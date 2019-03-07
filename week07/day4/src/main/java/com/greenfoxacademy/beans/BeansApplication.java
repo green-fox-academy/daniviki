@@ -22,7 +22,7 @@ public class BeansApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        printer.log("elég lesz kösz csá");
+        printer.log("fuss");
     }
 
 
