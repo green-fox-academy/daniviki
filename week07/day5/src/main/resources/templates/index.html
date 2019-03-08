@@ -11,7 +11,8 @@
         </ul>
     </form>
     <img src="../static/greenfox.png" th:src="@{greenfox.png}" alt="logo"/>
-    <p>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
+    <p th:text="'This is ' + ${name} + '. Currently living on ' + ${food} + '. He knows ' + ${tricks} + ' tricks.'"></p>
+
     <h1>Known tricks</h1>
     <form>
         <ul>
