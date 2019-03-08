@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Links</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+</head>
+<body>
+<div class="links">
+    <form method="GET">
+        <a href="/useful/colored" > Random colored webpage</a>
+        <a href="/useful/email" > Email validation</a>
+    </form>
+    <form method="GET" action="http://localhost:8080/cheapest-first">
+        <input type="submit" name="cheapestFirst" value="CHEAPEST FIRST">
+    </form>
+</div>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>Quantity of stock</td>
+    </tr>
+    </thead>
+    <tbody id="valami">
+    <tr th:each="item : ${items}">
+        <td th:text="${item.getName()}"></td>
+        <td th:text="${item.getDescription()}"></td>
+        <td th:text="${item.getPrice()}"></td>
+        <td th:text="${item.getQuantityOfStock()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

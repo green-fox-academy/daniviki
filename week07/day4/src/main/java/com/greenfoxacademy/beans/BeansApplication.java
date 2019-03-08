@@ -13,7 +13,6 @@ public class BeansApplication implements CommandLineRunner {
     private Printer printer;
     private MyColor myColor;
 
-    @Autowired
     BeansApplication(MyColor myColor) {
         this.myColor = myColor;
     }
