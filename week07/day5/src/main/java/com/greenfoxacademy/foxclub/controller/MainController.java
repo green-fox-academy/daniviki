@@ -38,17 +38,8 @@ public class MainController {
     }
 
     @PostMapping("/login")
-    public String postLoginForm(@RequestParam("name") String name, Model model) {
-        Fox newFox = foxList.getFox(name);
-        if (newFox == null) {
-            newFox = new Fox(name);
-            foxList.addFox(newFox);
-        }
-
-        model.addAttribute("name", name);
-        model.addAttribute("food", newFox.getFood() );
-        model.addAttribute("drink", newFox.getDrink());
-        model.addAttribute("tricks", newFox.getTricks().size());
+    public String postLoginForm(Model model) {
+        model.addAttribute("newFox", new Fox());
         return "index";
     }
 }

@@ -20,11 +20,7 @@ public class Fox {
         this.tricks = tricks;
     }
 
-    public Fox(String name) {
-        this.name = name;
-        this.food = "default";
-        this.drink = "default";
-        this.tricks = new ArrayList<>();
+    public Fox() {
     }
 
     public String getName() {
