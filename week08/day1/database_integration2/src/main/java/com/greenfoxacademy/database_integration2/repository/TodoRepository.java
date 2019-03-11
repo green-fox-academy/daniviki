@@ -1,8 +1,8 @@
-package com.greenfoxacademy.database_integration.repository;
+package com.greenfoxacademy.database_integration2.repository;
 
-import com.greenfoxacademy.database_integration.model.Todo;
-import org.springframework.data.repository.CrudRepository;
+import com.greenfoxacademy.database_integration2.model.Todo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TodoRepository extends CrudRepository<Todo, Long> {
+public interface TodoRepository extends JpaRepository<Todo, Long> {
 
 }

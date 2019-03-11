@@ -1,4 +1,4 @@
-package com.greenfoxacademy.database_integration.model;
+package com.greenfoxacademy.database_integration2.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,18 +13,17 @@ public class Todo {
     private long id;
 
     private String title;
-    private boolean urgent;
-    private boolean done;
+    private boolean isUrgent;
+    private boolean isDone;
 
     public Todo() {
-        this.urgent = false;
-        this.done = false;
+        this.isDone = false;
     }
 
-    public Todo(String title) {
+    public Todo(String title, boolean isDone, boolean isUrgent) {
         this.title = title;
-        this.urgent = false;
-        this.done = false;
+        this.isUrgent = isUrgent;
+        this.isDone = isDone;
     }
 
     public long getId() {
@@ -40,18 +39,18 @@ public class Todo {
     }
 
     public boolean isUrgent() {
-        return urgent;
+        return isUrgent;
     }
 
     public void setUrgent(boolean urgent) {
-        this.urgent = urgent;
+        this.isUrgent = urgent;
     }
 
     public boolean isDone() {
-        return done;
+        return isDone;
     }
 
     public void setDone(boolean done) {
-        this.done = done;
+        this.isDone = done;
     }
 }
