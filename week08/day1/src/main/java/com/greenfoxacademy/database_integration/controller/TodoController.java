@@ -1,26 +1,29 @@
 package com.greenfoxacademy.database_integration.controller;
 
-import com.greenfoxacademy.database_integration.repository.TodoReporitory;
+import com.greenfoxacademy.database_integration.model.Todo;
+import com.greenfoxacademy.database_integration.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class TodoController {
 
-    private TodoReporitory todoReporitory;
+    private TodoRepository todoRepository;
 
     @Autowired
-    public TodoController(TodoReporitory todoReporitory) {
-        this.todoReporitory = todoReporitory;
+    public TodoController(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
     }
 
     @RequestMapping({"/", "/list"})
-    @ResponseBody
-    public String list() {
-
-        return "This is my first Todo";
+    public String firstPage(Model model) {
+        model.addAttribute("todos", todoRepository.findAll());
+        return "todo";
     }
-
 }

@@ -17,9 +17,11 @@ public class Todo {
     private boolean done;
 
     public Todo() {
+        this.urgent = false;
+        this.done = false;
     }
 
-    public Todo(String title, boolean urgent, boolean done) {
+    public Todo(String title) {
         this.title = title;
         this.urgent = false;
         this.done = false;

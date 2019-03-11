@@ -5,5 +5,10 @@
     <title>Todo</title>
 </head>
 <body>
+<h1>Todos for today:</h1>
+<ul th:each="todo : ${todos}">
+    <li th:text="${todo.title}"></li>
+
+</ul>
 </body>
 </html>
