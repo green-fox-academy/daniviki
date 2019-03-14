@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todos</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/style.css">
+</head>
+<body>
+<div class="head">
+    <a href="/todo/add">Submit new post</a>
+    <h1>Todos for today:</h1>
+</div>
+<h1>Trending posts</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Action</th>
+        <th>Urgent</th>
+        <th>Done</th>
+    </tr>
+    <tr th:each="post : ${activeTodos}">
+        <td th:text="${todo.id}"></td>
+        <td th:text="${todo.title}"></td>
+        <td th:text="${todo.isUrgent()}"></td>
+        <td th:text="${todo.isDone()}"></td>
+        <td>
+            <form th:method="DELETE" th:action="@{|${todo.id}/delete|}">
+                <input type="submit" value="delete">
+            </form>
+            <form th:method="GET" th:action="@{|${todo.id}/update|}">
+                <input type="submit" value="edit">
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
