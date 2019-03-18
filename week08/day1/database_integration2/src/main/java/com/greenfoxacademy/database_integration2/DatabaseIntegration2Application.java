@@ -1,6 +1,5 @@
 package com.greenfoxacademy.database_integration2;
 
-import com.greenfoxacademy.database_integration2.model.Todo;
 import com.greenfoxacademy.database_integration2.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

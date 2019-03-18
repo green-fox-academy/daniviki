@@ -1,41 +1,27 @@
 package com.greenfoxacademy.database_integration2.controller;
 
 import com.greenfoxacademy.database_integration2.model.Todo;
-import com.greenfoxacademy.database_integration2.repository.TodoRepository;
+import com.greenfoxacademy.database_integration2.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
-
 @Controller
 public class TodoController {
 
-    private TodoRepository todoRepository;
+    private TodoService todoService;
+    //TODO: remove repo
+    //TODO: inject TodoService and use its methods instead of using the repo directly
 
     @Autowired
-    public TodoController(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
     }
 
     @RequestMapping(value = {"/todo", "/list"}, method = RequestMethod.GET)
-    public String firstPage( Model model, @RequestParam(value = "isActive", required = false) String isDone) {
-        System.out.println(isDone);
-        List<Todo> activeTodos = new ArrayList<>();
-        if (isDone != null && isDone.equals("true")) {
-            activeTodos = todoRepository.findAll()
-                    .stream()
-                    .filter(t -> !t.isDone())
-                    .collect(Collectors.toList());
-            model.addAttribute("todos", activeTodos);
-        }else{
-            model.addAttribute("todos", todoRepository.findAll());
-        }
+    public String firstPage(Model model, @RequestParam(value = "isActive", required = false) String isActive) {
+        model.addAttribute("activeTodos", todoService.findActiveTodos(isActive));
         return "todo";
     }
 
@@ -47,13 +33,30 @@ public class TodoController {
 
     @PostMapping(value = "/todo/add")
     public String addNewTodo(@ModelAttribute("todo") Todo todo) {
-        todoRepository.save(todo);
+        todoService.save(todo);
         return "redirect:/todo";
     }
 
     @DeleteMapping(value = "/{id}/delete")
-    public String deleteTodo(@ModelAttribute("todo") Todo todo, @PathVariable Integer id) {
-        todoRepository.delete(todo);
+    public String deleteTodo(@ModelAttribute("todo") Todo todo, @PathVariable long id) {
+        todoService.deleteTodo(id);
         return "redirect:/todo";
     }
+
+    @GetMapping(value = "/{id}/update")
+    public String updateTodo(Model model, @PathVariable long id) {
+        model.addAttribute("editTodo", todoService.findById(id));
+        return "update_form";
+    }
+
+    @PostMapping(value = "/{id}/update")
+    public String updateTodoPost(@PathVariable long id, @ModelAttribute("editTodo") Todo editTodo) {
+        Todo todo = todoService.findById(id);
+        todo.setTitle(editTodo.getTitle());
+        todo.setDone(editTodo.isDone());
+        todo.setUrgent(editTodo.isUrgent());
+        todoService.save(todo);
+        return "redirect:/todo";
+    }
+
 }
