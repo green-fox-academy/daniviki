@@ -7,9 +7,9 @@ public class Append {
     public Append() {
     }
 
-    public Append(String appended) {
+    public Append(String append) {
         this.appendLetter = 'a';
-        this.appended = appended + appendLetter;
+        this.appended = append + appendLetter;
 
     }
 
