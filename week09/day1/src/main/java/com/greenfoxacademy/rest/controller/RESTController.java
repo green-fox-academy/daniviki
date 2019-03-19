@@ -3,8 +3,6 @@ package com.greenfoxacademy.rest.controller;
 import com.greenfoxacademy.rest.model.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.PolicySpi;
-
 @RestController
 public class RESTController {
 
@@ -46,8 +44,36 @@ public class RESTController {
 
         if (action == null) {
             return new ExeptionMessage("Please provide a number!");
+        } else if (action.equalsIgnoreCase("sum")) {
+            until.sum();
+            return until;
+        } else if (action.equalsIgnoreCase("factor")) {
+            until.factor();
+            return until;
+        } else {
+            return new ExeptionMessage("No endpoint.");
         }
-        DoUntil doUntil = new DoUntil();
-        return doUntil.doIt(action, until.getUntil());
+    }
+
+    @PostMapping("/arrays")
+    public Object arrayHandling(@RequestBody RequestBodies requestBodies) {
+
+        if (requestBodies.getWhat().equalsIgnoreCase("sum")) {
+            ArrayHandler_int intResult = new ArrayHandler_int();
+            intResult.sum(requestBodies.getNumbers());
+            return intResult;
+
+        } else if (requestBodies.getWhat().equalsIgnoreCase("multiply")) {
+            ArrayHandler_int intResult = new ArrayHandler_int();
+            intResult.multiply(requestBodies.getNumbers());
+            return intResult;
+
+        } else if (requestBodies.getWhat().equalsIgnoreCase("double")) {
+            ArrayHandler_array arrayResult = new ArrayHandler_array();
+            arrayResult.doubleElements(requestBodies.getNumbers());
+            return arrayResult;
+        } else {
+            return new ExeptionMessage("Please provide what to do with the numbers!");
+        }
     }
 }
