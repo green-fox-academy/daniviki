@@ -1,2 +1,2 @@
 # daniviki
-[lesd meg](https://github.com/green-fox-academy/daniviki.git)
+[first website](https://github.com/green-fox-academy/daniviki.git)
